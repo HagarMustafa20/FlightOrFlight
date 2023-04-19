@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body style="background-color:darkslategrey">
+    <h1 style="color:white ; text-align:center">My MVC Application</h1>
+    <br />
+    <div style="text-align: right; margin: auto; width: 60%; padding: 20px;">
+        <button style="width:100px;height:30px;">
+            <a href="/Home/index">Home</a>
+        </button>
+        <button style="width:100px;height:30px;">
+            <a href="/Home/About">About</a>
+        </button>
+    </div>
+    @RenderBody()
+</body>
+</html>

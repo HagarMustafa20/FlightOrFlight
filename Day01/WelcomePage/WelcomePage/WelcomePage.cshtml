@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div style="text-align:center;">
+        <form action="" method="post">
+
+            <label>Name</label>
+            <input type="text" name="name" />
+            <br /><br /><br />
+            <label>Birth Date</label>
+            <input type="date" name="date" />
+            <br /><br />
+            <input type="checkbox" name="graduated" />
+            <label>IsGrauted</label>
+            <br>
+            <input type="submit" value="Go" />
+        </form>
+    </div>
+</body>
+@{
+
+    //Check for the number of Vistis
+    if (IsPost && !Request["name"].IsEmpty() && !Request["date"].IsEmpty())
+
+    {
+        
+            if (Request["graduated"] == "on")
+            {
+                <div style="font-size:larger">
+
+                    <p style="color:red;">Hello @Request["name"]</p>
+                    <br />
+                    <p style="color:blue;">Your age is @Request["date"]</p>
+                    <br />
+                    <p style="color:black;">YESSSSSSS, Am Graduated</p>
+                </div>
+
+            }
+            else
+            {
+
+                 <div style="font-size:larger">
+
+            <p style="color:red;">Hello @Request["name"]</p>
+            <br />
+            <p style="color:blue;">Your age is @Request["date"]</p>
+            <br />
+            <p style="color:black;">NOOOOOOOOOOOO, Am not Graduated</p>
+        </div>
+            }
+
+        
+
+    }
+}
+</html>

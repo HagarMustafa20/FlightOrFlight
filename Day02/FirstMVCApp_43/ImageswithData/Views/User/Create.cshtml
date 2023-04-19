@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_mypage.cshtml";
+}
+@using ImageswithData.Models;
+@{
+    ViewBag.Title = "Create";
+    UserData newUser = ViewBag.newuser;
+}
+
+
+
+<div style="background-color: whitesmoke; margin: auto; width: 60%; border: 3px solid #73AD21; padding: 20px;padding-top:20px;">
+
+    <h2 style="color:dimgray;text-align:Center;padding-top:10px ">Add New User</h2>
+    <br />
+
+    <form action="/User/Create" method="post">
+        <label>ID:</label>
+        <br />
+        <input type="text" name="id" value="@newUser.Id" />
+        <br />
+        <label>Name:</label>
+        <br />
+        <input type="text" name="name" value="@newUser.Name" />
+        <br />
+        <br />
+        <label>Image:</label>
+        <select name="image">
+            <option value="1.jpg">1</option>
+            <option value="2.jpg">2</option>
+            <option value="3.jpg">3</option>
+            <option value="4.jpg">4</option>
+            <option value="5.jpg">5</option>
+            <option value="6.jpg">6</option>
+            <option value="7.jpg">7</option>
+        </select>
+        <br />
+        <br />
+
+
+        <input style="background-color: forestgreen; margin: auto; width: 20%;" type="submit" value="Save" />
+    </form>
+
+    </div>

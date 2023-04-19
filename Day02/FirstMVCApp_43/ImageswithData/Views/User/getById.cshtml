@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_mypage.cshtml";
+}
+@using ImageswithData.Models;
+@{
+    ViewBag.Title = "getById";
+    UserData pUser = ViewBag.user;
+}
+
+<div style="background-color: whitesmoke; margin: auto; width: 60%; border: 3px solid #73AD21; padding: 20px;padding-top:20px;">
+
+    <h2 style="color:dimgray;text-align:Center;padding-top:10px ">Show Details</h2>
+    <br />
+
+
+    <h4 style="color:dimgrey ">  Your ID      : @pUser.Id  </h4>
+    <h4 style="color:dimgrey ">  Your Name is    : @pUser.Name</h4>
+    <div>
+        <img style="width:500px;height:500px;padding-left:20px" src="~/images/@pUser.Image" />
+    </div>
+</div>
+
+
+

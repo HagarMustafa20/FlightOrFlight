@@ -1,0 +1,20 @@
+﻿@using FirstMVCApp_43.Models;
+@{
+    ViewBag.Title = "getByNum";
+
+    Car curCar = ViewBag.selectedCar;
+}
+
+<h2 style="color:gray">Car Info</h2>
+<br />
+
+
+<h4>  Num      : @curCar.Num  </h4>
+<h4>  Color    : @curCar.Color</h4>
+<h4>  Model     : @curCar.Model</h4>
+<h4>  Manfacture: @curCar.Manfacture</h4>
+
+<button style="background-color:darkslategrey">
+
+    <a style="color:white" href="/Car/getAll"> Back To List </a>
+</button>

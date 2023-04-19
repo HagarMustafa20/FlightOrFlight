@@ -1,0 +1,98 @@
+﻿@model IEnumerable<MVC_EF.Models.Student>
+
+@{
+    ViewBag.Title = "getAll";
+}
+
+<h2>getAll</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <div class="col-md-10">
+                
+              Department:  @Html.DropDownList("id", new SelectList(ViewBag.departments, "Dept_Id", "Dept_Name"), htmlAttributes: new { @class = "form-control" })
+                <input style="background-color:forestgreen" type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.St_Fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.St_Lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.St_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.St_Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Dept_Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.St_Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.St_Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.St_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.St_Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Dept_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.St_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.St_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.St_Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

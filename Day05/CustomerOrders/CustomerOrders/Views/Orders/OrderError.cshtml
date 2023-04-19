@@ -1,0 +1,17 @@
+﻿@model HandleErrorInfo
+@{
+    ViewBag.Title = "OrderError";
+}
+
+<h2>OrderError</h2>
+
+<h2 style="color:crimson">customErrorPage</h2>
+
+
+<h3 style="color:darkblue">  Fix Your Trust Errors and Come Again <span style='font-size:100px;'>&#129313;</span>  </h3>
+
+<h3 style="color:darkred"> Error message : @Model.Exception.Message  </h3>
+
+<h4> Controller: @Model.ControllerName  </h4>
+<h4>  Action: @Model.ActionName   </h4>
+

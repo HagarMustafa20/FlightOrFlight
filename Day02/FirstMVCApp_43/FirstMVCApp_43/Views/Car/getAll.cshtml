@@ -1,0 +1,68 @@
+﻿@using FirstMVCApp_43.Models;
+@{
+    ViewBag.Title = "getAll";
+
+    List<Car> myCarList = ViewBag.Cars;
+
+}
+
+<h2>getAll</h2>
+
+<button style="background-color:darkslategrey">
+
+    <a style="color:white" href="/Car/Create"> Add New Car </a>
+</button>
+<br />
+<br />
+<br />
+
+<div>
+    <table>
+        <tr>
+            <th> Number </th>
+            <th> &nbsp; </th>
+            <th> Color </th>
+            <th> &nbsp; </th>
+            <th> Model </th>
+            <th> &nbsp; </th>
+            <th> Manfacture  </th>
+            <th> &nbsp; </th>
+            <th> &nbsp; </th>
+            <th> &nbsp; </th>
+        </tr>
+
+        @foreach (var item in myCarList)
+        {
+            <tr>
+
+                <td> @item.Num </td>
+                <th> &nbsp; </th>
+                <td> @item.Color </td>
+                <th> &nbsp; </th>
+                <td> @item.Model </td>
+                <th> &nbsp; </th>
+                <td> @item.Manfacture </td>
+                <th> &nbsp; </th>
+                <td>
+                    <button style="background-color:lightgray">
+                        <a style="color:black" href="/Car/getByNum/@item.Num"> Select Car </a>
+                    </button>
+                </td>
+                <th> &nbsp; </th>
+                <td>
+                    <button style="background-color:lightgray">
+                        <a style="color:black" href="/Car/Edit/@item.Num"> Edit Car </a>
+                    </button>
+                </td>
+                <th> &nbsp; </th>
+                <td>
+                    <button style="background-color:lightgray">
+                        <a style="color:black" href="/Car/delete/@item.Num"> Delete Car </a>
+                    </button>
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
+

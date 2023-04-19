@@ -1,0 +1,33 @@
+﻿@using WelcomePage
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    @{
+        var productList = new List<Product>()
+        {
+             new Product(){ID=1, Name="product-1", Price=100},
+            new Product(){ID=2, Name="product-2", Price=200},
+            new Product(){ID=3, Name="product-3", Price=300},
+            new Product(){ID=4, Name="product-4", Price=400},
+
+        };
+        var grid = new WebGrid(productList);
+
+        var myChar = new Chart(width: 600, height: 400)
+             .AddTitle("Product Sales")
+             .AddSeries(chartType: "Pie",
+             xValue: productList, xField: "Name",
+             yValues: productList, yFields: "Price");
+    }
+    <div>
+        @grid.GetHtml();
+    <div>
+
+        @myChar.Write();
+    </div>
+    </div>
+</body>
+</html>

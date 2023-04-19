@@ -1,0 +1,30 @@
+﻿@using Car_CoreApp.Model;
+@{
+    ViewBag.Title = "Create";
+    Car newcarr = ViewBag.selectedCar;
+}
+
+
+<h2 style="color:gray">Add New Car </h2>
+
+<form action="/Car/Create" method="post">
+    <label>Number:</label>
+    <br />
+    <input type="text" name="num" value="@newcarr.Num" />
+    <br />
+    <label>Color:</label>
+    <br />
+    <input type="text" name="color" value="@newcarr.Color" />
+    <br />
+    <label>Model:</label>
+    <br />
+    <input type="text" name="model" value="@newcarr.Model" />
+    <br />
+    <label>Manfacture:</label>
+    <br />
+    <input type="text" name="manfacture" value="@newcarr.Manfacture" />
+    <br />
+
+    <input style="background-color:forestgreen" type="submit" value="Save" />
+</form>
+

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @*Style for the Grid*@
+    <style>
+        
+        #main {
+            border: 1px solid black;
+            display: flex;
+            background-color:beige;
+            height:600px;
+        }
+
+            #main div {
+                -ms-flex: 1; /* IE 10 */
+                flex:1;
+            }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        @*Form Div*@
+        <div>
+            <form action="" method="post">
+
+                @*BackGround Selection*@
+                <p>Choose a background image</p>
+                <select name="bg">
+                    <option value="0.jpg">1</option>
+                    <option value="1.jpg">2</option>
+                    <option value="2.jpg">3</option>
+                    <option value="3.jpg">4</option>
+                    <option value="4.jpg">5</option>
+                    <option value="5.jpg">6</option>
+                    <option value="6.jpg">7</option>
+                    <option value="7.jpg">8</option>
+                    <option value="8.jpg">9</option>
+                    <option value="9.jpg">10</option>
+                    <option value="10.jpg">11</option>
+                    <option value="11.jpg">12</option>
+
+                </select>
+
+                @*Font Color Selection*@
+                <p>Choose a font color : </p>
+                <select name="fc">
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                    <option value="green">Green</option>
+                </select>
+
+                @*Image Selection*@
+
+                <p>Choose a greeting Type : </p>
+                <label><input type="radio" value="bd2.jpg" name="pic"> Birthday</label>
+                <br />
+                <label><input type="radio" value="well.gif" name="pic"> Get Well Soon</label>
+                <br />
+                <label><input type="radio" value="val.bmp" name="pic"> Valentine</label>
+                <br />
+                <label><input type="radio" value="congrats.gif" name="pic"> Congrats</label>
+                <br />
+                <label><input type="checkbox" name="Add"> Add the Picture</label>
+                <p>Enter the greeting Message below: </p>
+                <textarea name="txtarea"></textarea>
+                <br />
+                <input type="submit" value="Preview" />
+            </form>
+        </div>
+
+
+
+        @*Submision Div*@
+        @{
+
+            //Check for the number of Vistis
+            if (IsPost && Request["bg"] != null && Request["fc"] != null && Request["pic"] != null && Request["Add"] == "on" && @Request["txtarea"]!=null)
+
+            {
+              
+                      <div style="background-image: url('backgrounds/@Request["bg"]');">
+                          <div style="text-align:center ; padding-top:90px">
+
+                           <img  src="~/Imagess/@Request["pic"]"/>
+                              <br />
+                              <br />
+                              <p style="color:@Request["fc"]; font-size:60px;">@Request["txtarea"]</p>
+                          </div>
+                       </div>
+                    
+
+            }
+        }
+ 
+
+    </div>
+</body>
+</html>
